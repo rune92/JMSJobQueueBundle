@@ -37,9 +37,9 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('jms_job_queue');
 
         if (method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
+            $rootNode = $treeBuilder->getRootNode()->children();
         } else {
-            $rootNode = $treeBuilder->root('jms_job_queue');
+            $rootNode = $treeBuilder->root('jms_job_queue')->children();
         }
 
         $rootNode
